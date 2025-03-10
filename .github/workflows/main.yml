@@ -10,7 +10,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest  # 使用 ubuntu 环境
+    runs-on: windows-latest  # 使用 windows 环境
 
     steps:
       - name: Checkout code
@@ -28,7 +28,7 @@ jobs:
 
       - name: Compile with Nuitka
         run: |
-          python -m nuitka --onefile --windows-icon-from-ico=logo.ico --output-dir=dist  --assume-yes-for-downloads main.py
+          python -m nuitka --onefile --windows-icon-from-ico=logo.ico  --windows-disable-console --output-dir=dist  --assume-yes-for-downloads main.py
           # --onefile: 生成单个可执行文件
           # --windows-icon-from-ico: 指定图标文件
           # --output-dir: 输出目录
