@@ -103,8 +103,8 @@ class ImageResizerApp:
             cv2.imwrite(output_file, resized_image)
             
             # 显示成功信息
-            messagebox.showinfo("成功", f"图片已保存到:\n{output_file.replace('/', '\\')}")
-            self.log_message(f"图片已保存到: {output_file.replace('/', '\\')}")
+            messagebox.showinfo("成功", f"图片已保存到:\n{output_file.replace('/', os.sep)}")
+            self.log_message(f"图片已保存到: {output_file.replace('/', os.sep)}")
 
         except Exception as e:
             messagebox.showerror("错误", f"转换失败: {str(e)}")
