@@ -39,7 +39,7 @@ jobs:
           Compress-Archive -Path main.exe -DestinationPath MyProgram.zip  # 将 .exe 打包为 zip
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4  # 使用 v4 版本
         with:
           name: MyProgram
           path: dist/MyProgram.zip  # 上传打包后的文件
