@@ -1,6 +1,6 @@
 import tkinter as tk
 from main_app import IDCopyApp
-from main3 import ImageResizerApp
+from main3 import ImageResizerApp  
 
 def launch_idcopy():
     win = tk.Toplevel(root)
@@ -12,7 +12,7 @@ def launch_resizer():
 
 if __name__ == "__main__":
     root = tk.Tk()
-    root.title("功能选择")
+    root.title("相片处理工具")  # 修复缺少前导引号的问题
     root.geometry("300x150")
     tk.Label(root, text="请选择功能：", font=("Arial", 14)).pack(pady=20)
     tk.Button(root, text="身份证复印功能", width=18, command=launch_idcopy).pack(pady=5)
