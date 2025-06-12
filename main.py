@@ -14,6 +14,10 @@ if __name__ == "__main__":
     root = tk.Tk()
     root.title("相片处理工具")
     root.geometry("300x150")
+    try:
+        root.iconbitmap("logo.ico")
+    except Exception as e:
+        print("无法加载图标文件:", str(e))
     tk.Label(root, text="请选择功能：", font=("Arial", 14)).pack(pady=20)
     tk.Button(root, text="身份证复印功能", width=18, command=launch_idcopy).pack(pady=5)
     tk.Button(root, text="尺寸调整功能", width=18, command=launch_resizer).pack(pady=5)
