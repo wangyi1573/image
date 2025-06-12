@@ -1,24 +1,22 @@
-import tkinter as tk
+# filepath: d:\code\image\image\main.py
+from kivy.app import App
+from kivy.uix.boxlayout import BoxLayout
+from kivy.uix.button import Button
 from main_app import IDCopyApp
 from main3 import ImageResizerApp
 
-def launch_idcopy():
-    win = tk.Toplevel(root)
-    IDCopyApp(win)
+class MainApp(App):
+    def build(self):
+        layout = BoxLayout(orientation='vertical', padding=10, spacing=10)
+        layout.add_widget(Button(text='身份证复印功能', on_press=self.launch_idcopy))
+        layout.add_widget(Button(text='尺寸调整功能', on_press=self.launch_resizer))
+        return layout
 
-def launch_resizer():
-    win = tk.Toplevel(root)
-    ImageResizerApp(win)
+    def launch_idcopy(self, instance):
+        IDCopyApp().run()
+
+    def launch_resizer(self, instance):
+        ImageResizerApp().run()
 
 if __name__ == "__main__":
-    root = tk.Tk()
-    root.title("相片处理工具")
-    root.geometry("300x150")
-    try:
-        root.iconbitmap("logo.ico")
-    except Exception as e:
-        print("无法加载图标文件:", str(e))
-    tk.Label(root, text="请选择功能：", font=("Arial", 14)).pack(pady=20)
-    tk.Button(root, text="身份证复印功能", width=18, command=launch_idcopy).pack(pady=5)
-    tk.Button(root, text="尺寸调整功能", width=18, command=launch_resizer).pack(pady=5)
-    root.mainloop()
+    MainApp().run()
