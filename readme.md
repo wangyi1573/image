@@ -40,7 +40,7 @@
 ## 文件说明
 - main.py：主入口，功能选择界面
 - main_app.py：身份证复印功能实现
-- image_resizer.py：图片尺寸调整功能实现
+- main3.py：图片尺寸调整功能实现
 
 ---
 如遇字体导致水印中文显示为方框，请确保系统有“msyh.ttc”或“simhei.ttf”字体。
